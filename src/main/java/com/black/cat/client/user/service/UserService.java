@@ -3,6 +3,7 @@
  */
 package com.black.cat.client.user.service;
 
+import java.util.Collection;
 import java.util.List;
 
 import com.black.cat.client.user.model.User;
@@ -18,6 +19,8 @@ public interface UserService {
 	 *
 	 * @return the all user
 	 */
-	List<User> getAllUser();
+	Collection<User> getAllUser();
+
+	void saveUser(User user);
 
 }
