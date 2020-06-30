@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService{
 		List<User> users = new ArrayList<>();
 		userRepo.findAll().forEach(e->{
 			User user=User.builder().emailId(e.getEmailId())
-					.id(e.getId().toHexString())
+					.id(e.getId().toString())
 					.mobileNo(e.getMobileNo())
 					.password(e.getPassword())
 					.role(e.getRole()).build();		
@@ -43,8 +43,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public void saveUser(User user) {
 		UserDocument entity = UserDocument.builder()
-				.active(true).emailId(user.getEmailId())
-				.id(ObjectId.get()).mobileNo(user.getMobileNo())
+				.active(true).emailId(user.getEmailId()).mobileNo(user.getMobileNo())
 				.password(user.getPassword()).role(user.getRole()).build();
 		userRepo.save(entity);
 	}

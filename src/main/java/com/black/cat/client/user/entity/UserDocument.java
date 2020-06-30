@@ -6,6 +6,7 @@ package com.black.cat.client.user.entity;
 import java.io.Serializable;
 
 import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Builder;
@@ -25,6 +26,7 @@ public class UserDocument implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 
+	@Id
 	private ObjectId id;
 	
 	private String username;
